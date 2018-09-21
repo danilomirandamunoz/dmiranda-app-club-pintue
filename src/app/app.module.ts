@@ -6,10 +6,16 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { NotifyPage } from '../pages/notify/notify';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { OneSignal } from '@ionic-native/onesignal';
+import { HttpClientModule } from '@angular/common/http';
+import { NotificarProvider } from '../providers/notificar/notificar';
+import { IonicImageLoader } from 'ionic-image-loader/dist/src/image-loader.module';
 
 @NgModule({
   declarations: [
@@ -17,11 +23,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+    NotifyPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicImageLoader.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +38,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+    NotifyPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    OneSignal,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NotificarProvider
   ]
 })
 export class AppModule {}

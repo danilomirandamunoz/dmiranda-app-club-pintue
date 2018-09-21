@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar color="club">
+        <ion-title text-center>CLUB PINTUÉ</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <div *ngIf="login== 1">
+        <form>
+            <ion-row>
+                <ion-col>
+                    <ion-list inset>
+
+                        <ion-item>
+                            <ion-input type="text" placeholder="Usuario" name="usuario" [(ngModel)]="username"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="pass"></ion-input>
+                        </ion-item>
+
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button ion-button block class="submit-btn" type="button" (click)="logeo()">Login</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
+    <div *ngIf="login== 2">
+        <form>
+            <ion-row>
+                <ion-col>
+                    <ion-list inset>
+
+                        <ion-item>
+                            <ion-input type="text" placeholder="Titulo" name="titulo" [(ngModel)]="titulo"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-input type="text" placeholder="Mensaje" name="Mensaje" [(ngModel)]="mensaje"></ion-input>
+                        </ion-item>
+
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button ion-button block class="submit-btn" type="button" (click)="notificar()">Notificar</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
+</ion-content>
