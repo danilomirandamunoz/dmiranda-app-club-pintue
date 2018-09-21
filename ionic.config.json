@@ -1,0 +1,7 @@
+{
+  "name": "club-pintue",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
