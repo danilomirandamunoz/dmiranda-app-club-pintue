@@ -2,12 +2,27 @@
     <ion-navbar color="club">
         <ion-title text-center>CLUB PINTUÉ</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only (click)="notificar()"> <ion-icon name="clipboard"></ion-icon></button>
+            <button ion-button icon-only (click)='recargar();'> <ion-icon name="refresh"></ion-icon></button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding text-center>
-    <img src="../../assets/imgs/logo.png" width="300" text-center/>
-    <img src="https://scontent-scl1-1.xx.fbcdn.net/v/t31.0-8/27982551_766059386919969_1644496442813134310_o.jpg?_nc_cat=103&oh=03df690bbc822facbb10867fd9db2c37&oe=5C316F77" width="300" text-center/>
+    <img src="http://danilomiranda-001-site6.itempurl.com/img/instituciones/clubpintue/img_principal.jpg" text-center/>
+    <h3>Noticias</h3>
+    <ion-list>
+        <div>
+            <ion-item *ngFor="let not of noticias" (click)="showNoticia(not.id_noticia)">
+
+                <ion-thumbnail item-start>
+                    <img src="{{not.imagen}}">
+                </ion-thumbnail>
+                <h3>{{not.titulo}}</h3>
+                <h3>{{not.fecha | date: 'dd-MM-yyyy' }}</h3>
+                <p style="font-size: 12px!important;">{{not.texto}}</p>
+                <ion-icon name="arrow-forward" item-end></ion-icon>
+            </ion-item>
+        </div>
+    </ion-list>
+
 </ion-content>

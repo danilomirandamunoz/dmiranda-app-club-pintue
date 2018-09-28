@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="club">
+        <ion-title text-center>SERIES</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)='recargar();'> <ion-icon name="refresh"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+
+
+    <ion-card class="card-color" *ngFor="let serie of series" (click)="abrirSerie(serie.id_serie, serie.imagen)">
+        <ion-card-content>
+            <ion-card-title>{{serie.nombre}}</ion-card-title>
+            <p>{{serie.descripcion}}</p>
+        </ion-card-content>
+        <img src="{{serie.imagen}}" text-center/>
+        <ion-card-content>
+            <ion-card-title>Jugadores
+                <ion-icon name="arrow-forward" item-end></ion-icon>
+            </ion-card-title>
+        </ion-card-content>
+
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="club">
+        <ion-title text-center>JUGADORES</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)='recargar();'> <ion-icon name="refresh"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="card-color">
+        <img src="{{imagenSerie}}" text-center/>
+
+        <ion-card-content text-center>
+
+            <ion-list>
+                <ion-item *ngFor="let jugador of jugadores">
+                    <ion-avatar item-start>
+                        <img src="{{jugador.imagen}}">
+                    </ion-avatar>
+                    <h2>{{jugador.nombre}}</h2>
+                    <p>Fecha Nacimiento: {{jugador.fecha_nacimiento | date: 'dd-MM-yyyy' }}</p>
+                    <p>Edad: {{jugador.edad}} años</p>
+                    <p>Posición: {{jugador.posicion}}</p>
+                    <p>Número: {{jugador.numero}}</p>
+                </ion-item>
+            </ion-list>
+
+        </ion-card-content>
+    </ion-card>
+</ion-content>

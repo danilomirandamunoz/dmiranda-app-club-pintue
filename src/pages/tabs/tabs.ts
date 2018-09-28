@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
+import { SeriesPage } from '../series/series';
 import { HomePage } from '../home/home';
-import { OneSignal } from '@ionic-native/onesignal';
+import { ProfesionalesPage } from '../profesionales/profesionales';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -10,9 +10,10 @@ import { OneSignal } from '@ionic-native/onesignal';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
+  tab2Root = SeriesPage;
+  tab3Root = ProfesionalesPage;
 
-  constructor(public oneSignal: OneSignal) {
+  constructor() {
 
   }
 }
